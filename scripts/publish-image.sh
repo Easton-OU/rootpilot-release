@@ -21,7 +21,9 @@ SOURCE_IMAGE="${SOURCE_IMAGE:?set SOURCE_IMAGE to the built image, e.g. rootpilo
 TARGET="ghcr.io/${GHCR_OWNER}/rootpilot"
 
 echo "Pulling source image ${SOURCE_IMAGE} ..."
-docker pull "${SOURCE_IMAGE}" || echo "(using local ${SOURCE_IMAGE})"
+# The product image is linux/amd64 only; pin the platform so this also works
+# on arm64 hosts (Apple Silicon).
+docker pull --platform linux/amd64 "${SOURCE_IMAGE}" || echo "(using local ${SOURCE_IMAGE})"
 
 echo "Tagging -> ${TARGET}:${VERSION} and ${TARGET}:latest"
 docker tag "${SOURCE_IMAGE}" "${TARGET}:${VERSION}"
