@@ -1,0 +1,51 @@
+# RootPilot self-hosted — production deployment.
+# Pulls a prebuilt image; nothing is compiled locally.
+#
+#   1. cp .env.example .env   &&   edit .env (set DB_PASSWORD + ROOTPILOT_ENCRYPT_KEY)
+#   2. docker compose up -d
+#   3. open http://localhost:18081  (over an SSH tunnel if the host is remote — see docs/deployment.md)
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+      MYSQL_DATABASE: rootpilot
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${DB_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  app:
+    # Published to GitHub Container Registry (see MANUAL-RELEASE.md for the
+    # first push).
+    image: ghcr.io/easton-ou/rootpilot:latest
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: rootpilot
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+      # The app listens on this port inside the container and it is what we map.
+      SERVER_PORT: ${APP_PORT:-18081}
+      # AES key (Base64, 32 bytes) that encrypts stored SSH credentials.
+      # Generate once, then keep it stable — changing it makes saved hosts undecryptable.
+      ROOTPILOT_ENCRYPT_KEY: ${ROOTPILOT_ENCRYPT_KEY:?set ROOTPILOT_ENCRYPT_KEY in .env}
+      # Optional: a Prometheus URL enriches diagnoses with metric trends.
+      ROOTPILOT_PROMETHEUS_URL: ${ROOTPILOT_PROMETHEUS_URL:-}
+      TZ: ${TZ:-UTC}
+    ports:
+      # Bound to loopback only: the console has no separate login and must not be
+      # exposed to the internet. Reach a remote host over an SSH tunnel, or put it
+      # behind your own reverse proxy + auth. See docs/deployment.md.
+      - "127.0.0.1:${APP_PORT:-18081}:${APP_PORT:-18081}"
+
+volumes:
+  mysql-data:
