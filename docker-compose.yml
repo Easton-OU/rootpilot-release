@@ -23,6 +23,9 @@ services:
     # Published to GitHub Container Registry (see MANUAL-RELEASE.md for the
     # first push).
     image: ghcr.io/easton-ou/rootpilot:latest
+    # The image is amd64-only; this makes the pull work on arm64 hosts too
+    # (Apple Silicon runs it under emulation).
+    platform: linux/amd64
     restart: unless-stopped
     depends_on:
       mysql:
