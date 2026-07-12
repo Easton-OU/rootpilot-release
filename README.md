@@ -62,7 +62,7 @@ RootPilot is calibrated against a library of real, injected failure scenarios �
 
 > **38 read-only commands · 89.7% root-cause accuracy across 29 standard failure scenarios · zero false alarms on healthy hosts.**
 
-Scenarios span disk-full (including deleted-but-open files), inode exhaustion, OOM kills, container crash loops, IO saturation, TIME_WAIT floods, DNS failure, clock drift, fd exhaustion and more. The calibration scenario library is being open-sourced so you can see — and challenge — exactly what "tested" means. *(link coming: the collection/calibration layer is already open source — see [Related](#related).)*
+Scenarios span disk-full (including deleted-but-open files), inode exhaustion, OOM kills, container crash loops, IO saturation, TIME_WAIT floods, DNS failure, clock drift, fd exhaustion and more. The full scenario list, the scoring rubric written before the runs, and the per-scenario results — **including the scenarios we don't score full marks on** — are published in [docs/calibration.md](docs/calibration.md).
 
 ## Quick start
 

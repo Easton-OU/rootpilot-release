@@ -32,7 +32,7 @@ This repo contains only docs + deployment config (no application source). The st
 
 - [x] On rootpilotx.com: add a GitHub link in the site footer and on the download page.
 - [x] Link the `rootpilot-mcp` repo from the README's **Related** section (already stubbed) and link back from `rootpilot-mcp`.
-- [ ] Once the calibration scenario library is published, fill the "link coming" note in the README's **Tested, not vibes** section.
+- [x] Once the calibration scenario library is published, fill the "link coming" note in the README's **Tested, not vibes** section. *(done: scenario list + rubric + per-scenario results published as `docs/calibration.md` + `docs/zh/calibration.md`.)*
 
 ## 6. Self-check (verified locally)
 

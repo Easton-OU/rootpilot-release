@@ -19,7 +19,7 @@ Monitoring tells you a metric crossed a threshold. RootPilot picks up from there
 The console binds to `127.0.0.1` only and is meant to be reached over an SSH tunnel or behind your own authenticated reverse proxy — that is the access-control boundary. Do not expose port 18081 directly to the internet.
 
 **How accurate is it, really?**
-On the current calibration set: **89.7% root-cause accuracy across 29 standard failure scenarios, with zero false alarms on healthy hosts** — using 38 read-only commands. Accuracy depends on the model you bring and how much evidence the host exposes. We publish the methodology and keep expanding the scenario library.
+On the current calibration set: **89.7% root-cause accuracy across 29 standard failure scenarios, with zero false alarms on healthy hosts** — using 38 read-only commands. Accuracy depends on the model you bring and how much evidence the host exposes. The full scenario list, rubric, and per-scenario results (misses included) are in [calibration.md](calibration.md), and the scenario library keeps expanding.
 
 **How do I import a license?**
 Paste the license string on the console's license page. Free needs no license; Pro/Max licenses come from [rootpilotx.com](https://rootpilotx.com). The license is verified locally — no license-server call is required to run.
