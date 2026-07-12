@@ -1,15 +1,14 @@
 # assets/
 
-Images referenced by the root `README.md`. Add these before the repo goes public.
+Images referenced by the root `README.md`.
 
-| file | what it should show | requirements |
+| file | what it shows | status |
 |---|---|---|
-| `logo.png` | RootPilot mark (🍊 fruit logo) | square, ~144×144, transparent background |
-| `report.png` | A diagnosis report: root cause + evidence chain + suggested commands | **English UI**, fully desensitized (no real IPs, domains, hostnames, or credentials), width ~1500px |
+| `logo.png` | RootPilot mark (🍊 fruit logo), 128×128 | ✅ added |
+| `report.png` | A diagnosis report: root cause + evidence + suggested commands (English UI, desensitized) | ✅ added |
 
-Desensitization checklist for screenshots:
-- Replace real hostnames/IPs with placeholders (`prod-1`, `10.0.0.5`).
-- No real domains, no license strings, no API keys.
-- Use the English locale build of the console.
+Desensitization checklist applied to screenshots:
+- No real IPs, domains, hostnames, or credentials.
+- English locale UI.
 
-Until `logo.png` and `report.png` are added, the README image links will show broken-image placeholders on GitHub. That is expected for the first commit; swap them in before announcing the repo (see `MANUAL-RELEASE.md`).
+When replacing `report.png` in the future, keep the same checklist and frame the full story: severity banner → summary → root cause → verify steps → fix suggestions.

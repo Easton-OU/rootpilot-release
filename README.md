@@ -16,10 +16,8 @@ AI root-cause analysis for your Docker servers — self-hosted, read-only, bring
 
 ---
 
-<!-- SCREENSHOT: diagnosis report (root cause + evidence chain + suggested commands), English UI, desensitized.
-     Place at assets/report.png once the English UI build is ready. -->
 <div align="center">
-  <img src="assets/report.png" alt="RootPilot diagnosis report" width="760" />
+  <img src="assets/report.png" alt="RootPilot diagnosis report — root cause, evidence, suggested commands" width="760" />
 </div>
 
 ## How it works
