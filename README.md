@@ -9,7 +9,7 @@
 AI root-cause analysis for your Docker servers — self-hosted, read-only, bring-your-own-key.
 
 [![License](https://img.shields.io/badge/docs%20%26%20config-MIT-blue)](LICENSE.md)
-[![Release](https://img.shields.io/badge/release-v1.0.0-orange)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-v1.0.1-orange)](CHANGELOG.md)
 ![Self-hosted](https://img.shields.io/badge/self--hosted-Docker-2496ED)
 
 </div>

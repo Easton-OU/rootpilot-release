@@ -3,6 +3,11 @@
 All notable changes to the RootPilot release (docs + deployment) are recorded here.
 This file tracks the public release artifact; the product itself is versioned by its image tags.
 
+## v1.0.1
+
+- **Diagnosis reports now follow the console language.** With the console in en/ja/ko/de/fr, the AI report is written in that language. The Chinese path is unchanged from the calibrated prompts, and locale values are mapped to fixed instructions — never interpolated into the prompt.
+- Docs: the calibration scenario library is now published — see [docs/calibration.md](docs/calibration.md).
+
 ## v1.0.0
 
 First public release.
