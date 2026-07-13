@@ -39,4 +39,4 @@ This repo contains only docs + deployment config (no application source). The st
 - [x] No stray internal-port reference, no legacy `.dev` domain, no `.java` / `.vue` / prompt files anywhere in the repo.
 - [x] All metrics use the latest calibration report: 38 read-only commands, 89.7% across 29 standard failure scenarios, zero false alarms.
 - [x] Port is 18081 throughout; console bound to loopback.
-- [ ] Final human read-through of README for tone (no marketing filler) before announcing.
+- [x] Final read-through of README for tone (no marketing filler) before announcing. *(2026-07-13: no filler found; softened "the exact commands to fix it" → "suggested commands … (nothing runs without you)" to match the product's suggestions-only stance, and added "(redacted)" to the Feedback logs ask for consistency with the FAQ.)*

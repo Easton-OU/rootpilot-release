@@ -22,7 +22,7 @@ AI root-cause analysis for your Docker servers — self-hosted, read-only, bring
 
 ## How it works
 
-Your alerts already tell you *what* broke. RootPilot connects to the affected host, gathers evidence with a fixed read-only command set, and hands you a root-cause report — cause, the evidence chain behind it, and the exact commands to fix it.
+Your alerts already tell you *what* broke. RootPilot connects to the affected host, gathers evidence with a fixed read-only command set, and hands you a root-cause report — cause, the evidence chain behind it, and suggested commands to fix it (nothing runs without you).
 
 ```
    ┌────────────┐      ┌────────────────────┐      ┌──────────────────────┐
@@ -114,7 +114,7 @@ More in [docs/faq.md](docs/faq.md).
 
 ## Feedback
 
-Issues welcome. And if RootPilot fails on your weirdest failure, open an issue with the logs — it becomes a calibration case, and the accuracy number above goes up because of you.
+Issues welcome. And if RootPilot fails on your weirdest failure, open an issue with the (redacted) logs — it becomes a calibration case, and the accuracy number above goes up because of you.
 
 ## Related
 
